@@ -1,4 +1,4 @@
-var fs = require('fs')
+var fs = Meteor.npmRequire('fs')
 
 // Service Provider(SP), having a certificate is not mandatory. However, some IDPs may require.
 //If you enable a certificate for your Service Provider, it may be able to sign requests and response sent to the Identity Provider,
