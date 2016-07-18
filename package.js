@@ -28,9 +28,9 @@ Package.onUse(function(api) {
   api.use(serverAndClientPackages,["client","server"]);
   api.use("tracker@1.0.9","client");
 
-  api.addFiles(["client/samlClientHandler.js"],"client");
-  api.addFiles(["server/config.js"],"server");
-	api.addFiles(["server/samlServerHandler.js"],"server");
+  api.addFiles(["src/client/samlClientHandler.js"],"client");
+  api.addFiles(["src/server/config.js"],"server");
+	api.addFiles(["src/server/samlServerHandler.js"],"server");
   api.export(["SAML"],["server"]);
 });
 

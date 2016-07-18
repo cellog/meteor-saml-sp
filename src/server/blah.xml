@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" entityID="https://shib.unl.edu/idp/shibboleth"
+                  xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <IDPSSODescriptor
+            protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+        <Extensions>
+            <shibmd:Scope regexp="false">unl.edu</shibmd:Scope>
+        </Extensions>
+        <KeyDescriptor>
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>MIIDHDCCAgSgAwIBAgIVALR4hUzlhDFUyPrCzbCR8aB8/okIMA0GCSqGSIb3DQEB
+                        BQUAMBcxFTATBgNVBAMTDHNoaWIudW5sLmVkdTAeFw0xMDA5MTAyMTA4MjZaFw0z
+                        MDA5MTAyMTA4MjZaMBcxFTATBgNVBAMTDHNoaWIudW5sLmVkdTCCASIwDQYJKoZI
+                        hvcNAQEBBQADggEPADCCAQoCggEBAJhLs+N32LNQicvVL26oZcWyU46MixkhDOdG
+                        h5XmzO8vWckrIPs+4LUG5U9ozfIksiYVVJW4mTl21RID0RJ9l3svZeKvEKBGrxUR
+                        6mQb1nQQcUPVVxNlMIZ5rlWfyffWcP686kGYTdWMU14KyflrVyFW7Vq70izKe9oT
+                        nX+bEclWv6KjzFayWJcIYCE4+jX7GvxSMyQTh3TRenUGOh9iukzIHlApI9bfzh89
+                        OdHsHy3WPmvoZYRTLeeTtG+qvzNvD+IMBNCUM9f8bRYc6N790/vBHn7kU5XSiMIv
+                        5sXFMt5nwNPDq3+37vY7xpu+r74tcT3HpXF5OeOPmG2OC8FSIvMCAwEAAaNfMF0w
+                        PAYDVR0RBDUwM4IMc2hpYi51bmwuZWR1hiNodHRwczovL3NoaWIudW5sLmVkdS9p
+                        ZHAvc2hpYmJvbGV0aDAdBgNVHQ4EFgQUTEOLq42EOS0daP8iT0PJ1kc4rMUwDQYJ
+                        KoZIhvcNAQEFBQADggEBAIAZpYEcXhU317hPR08os2NC3TM2K6BaNrRm53fu+tIT
+                        zsdHv7cfQ7ONLUE5vC0Wis6g468wGOKi01ueSrIU7emQUgQaxRoCbinUsSu1R6a1
+                        NP/c0ZhOo88hweNRac8zpZccjUi9Oc3WssQ/uHbkumN2hM7BhvC/4NRg5NRMWLNs
+                        ko224ENGUqVqFkBiZJWH5ooxOM/8Gt4Ut1cTkNxyMSJvno7Gki95l0M45fNfSbWw
+                        voZFOzm0IBZx1K786PNxotISs/WY/R7yJA91L0FCzrXFMh+jK5L1nCg5ZfEL0YEM
+                        D0DIYdBk2yItSdfimeC1/cwOOK1xLZfLs9q46OUL7UU=
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding"
+                                   Location="https://shib.unl.edu:8443/idp/profile/SAML1/SOAP/ArtifactResolution"
+                                   index="1"/>
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+                                   Location="https://shib.unl.edu:8443/idp/profile/SAML2/SOAP/ArtifactResolution"
+                                   index="2"/>
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+        <SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest"
+                             Location="https://shib.unl.edu/idp/profile/Shibboleth/SSO"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                             Location="https://shib.unl.edu/idp/profile/SAML2/POST/SSO"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign"
+                             Location="https://shib.unl.edu/idp/profile/SAML2/POST-SimpleSign/SSO"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+                             Location="https://shib.unl.edu/idp/profile/SAML2/Redirect/SSO"/>
+    </IDPSSODescriptor>
+    <AttributeAuthorityDescriptor
+            protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+        <Extensions>
+            <shibmd:Scope regexp="false">unl.edu</shibmd:Scope>
+        </Extensions>
+        <KeyDescriptor>
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>MIIDHDCCAgSgAwIBAgIVALR4hUzlhDFUyPrCzbCR8aB8/okIMA0GCSqGSIb3DQEB
+                        BQUAMBcxFTATBgNVBAMTDHNoaWIudW5sLmVkdTAeFw0xMDA5MTAyMTA4MjZaFw0z
+                        MDA5MTAyMTA4MjZaMBcxFTATBgNVBAMTDHNoaWIudW5sLmVkdTCCASIwDQYJKoZI
+                        hvcNAQEBBQADggEPADCCAQoCggEBAJhLs+N32LNQicvVL26oZcWyU46MixkhDOdG
+                        h5XmzO8vWckrIPs+4LUG5U9ozfIksiYVVJW4mTl21RID0RJ9l3svZeKvEKBGrxUR
+                        6mQb1nQQcUPVVxNlMIZ5rlWfyffWcP686kGYTdWMU14KyflrVyFW7Vq70izKe9oT
+                        nX+bEclWv6KjzFayWJcIYCE4+jX7GvxSMyQTh3TRenUGOh9iukzIHlApI9bfzh89
+                        OdHsHy3WPmvoZYRTLeeTtG+qvzNvD+IMBNCUM9f8bRYc6N790/vBHn7kU5XSiMIv
+                        5sXFMt5nwNPDq3+37vY7xpu+r74tcT3HpXF5OeOPmG2OC8FSIvMCAwEAAaNfMF0w
+                        PAYDVR0RBDUwM4IMc2hpYi51bmwuZWR1hiNodHRwczovL3NoaWIudW5sLmVkdS9p
+                        ZHAvc2hpYmJvbGV0aDAdBgNVHQ4EFgQUTEOLq42EOS0daP8iT0PJ1kc4rMUwDQYJ
+                        KoZIhvcNAQEFBQADggEBAIAZpYEcXhU317hPR08os2NC3TM2K6BaNrRm53fu+tIT
+                        zsdHv7cfQ7ONLUE5vC0Wis6g468wGOKi01ueSrIU7emQUgQaxRoCbinUsSu1R6a1
+                        NP/c0ZhOo88hweNRac8zpZccjUi9Oc3WssQ/uHbkumN2hM7BhvC/4NRg5NRMWLNs
+                        ko224ENGUqVqFkBiZJWH5ooxOM/8Gt4Ut1cTkNxyMSJvno7Gki95l0M45fNfSbWw
+                        voZFOzm0IBZx1K786PNxotISs/WY/R7yJA91L0FCzrXFMh+jK5L1nCg5ZfEL0YEM
+                        D0DIYdBk2yItSdfimeC1/cwOOK1xLZfLs9q46OUL7UU=
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+        <AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding"
+                          Location="https://shib.unl.edu:8443/idp/profile/SAML1/SOAP/AttributeQuery"/>
+        <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+                          Location="https://shib.unl.edu:8443/idp/profile/SAML2/SOAP/AttributeQuery"/>
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+    </AttributeAuthorityDescriptor>
+</EntityDescriptor>
