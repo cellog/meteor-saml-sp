@@ -1,4 +1,4 @@
-
+fs = require('fs')
 
 // Service Provider(SP), having a certificate is not mandatory. However, some IDPs may require.
 //If you enable a certificate for your Service Provider, it may be able to sign requests and response sent to the Identity Provider,
@@ -49,3 +49,18 @@ saml = {
     cert : "MIIDHDCCAgSgAwIBAgIVALR4hUzlhDFUyPrCzbCR8aB8/okIMA0GCSqGSIb3DQEBBQUAMBcxFTATBgNVBAMTDHNoaWIudW5sLmVkdTAeFw0xMDA5MTAyMTA4MjZaFw0zMDA5MTAyMTA4MjZaMBcxFTATBgNVBAMTDHNoaWIudW5sLmVkdTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJhLs+N32LNQicvVL26oZcWyU46MixkhDOdGh5XmzO8vWckrIPs+4LUG5U9ozfIksiYVVJW4mTl21RID0RJ9l3svZeKvEKBGrxUR6mQb1nQQcUPVVxNlMIZ5rlWfyffWcP686kGYTdWMU14KyflrVyFW7Vq70izKe9oTnX+bEclWv6KjzFayWJcIYCE4+jX7GvxSMyQTh3TRenUGOh9iukzIHlApI9bfzh89OdHsHy3WPmvoZYRTLeeTtG+qvzNvD+IMBNCUM9f8bRYc6N790/vBHn7kU5XSiMIv5sXFMt5nwNPDq3+37vY7xpu+r74tcT3HpXF5OeOPmG2OC8FSIvMCAwEAAaNfMF0wPAYDVR0RBDUwM4IMc2hpYi51bmwuZWR1hiNodHRwczovL3NoaWIudW5sLmVkdS9pZHAvc2hpYmJvbGV0aDAdBgNVHQ4EFgQUTEOLq42EOS0daP8iT0PJ1kc4rMUwDQYJKoZIhvcNAQEFBQADggEBAIAZpYEcXhU317hPR08os2NC3TM2K6BaNrRm53fu+tITzsdHv7cfQ7ONLUE5vC0Wis6g468wGOKi01ueSrIU7emQUgQaxRoCbinUsSu1R6a1NP/c0ZhOo88hweNRac8zpZccjUi9Oc3WssQ/uHbkumN2hM7BhvC/4NRg5NRMWLNsko224ENGUqVqFkBiZJWH5ooxOM/8Gt4Ut1cTkNxyMSJvno7Gki95l0M45fNfSbWwvoZFOzm0IBZx1K786PNxotISs/WY/R7yJA91L0FCzrXFMh+jK5L1nCg5ZfEL0YEMD0DIYdBk2yItSdfimeC1/cwOOK1xLZfLs9q46OUL7UU="
   }]
 }
+
+var pvk
+var cert
+fs.readFile('/home/unl/pkey.txt', 'ascii', function(err, data) {
+  if (err) {
+    return
+  }
+  saml.serviceProvider.decryptionPvk = data
+})
+fs.readFile('/home/unl/cert.txt', 'ascii', function(err, data) {
+  if (err) {
+    return
+  }
+  saml.serviceProvider.decryptionCert = data
+})
